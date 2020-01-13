@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Day Planner</title>
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="assets/style.css">
+
+</head>
+
+<body>
+    <header id="title-container" class="container-fluid">
+        <h1>Work Day Scheduler</h1>
+        <p>A simple calendar app for scheduling your work day.</p>
+        <p id="date"></p>
+    </header>
+    <table class="table">
+        <tbody>
+            <tr id="row-9" class="time-Container" data-hour="9">
+                <th scope="row">9AM</th>
+                <td><textarea class="task9" name="task" rows="2"></textarea></td>
+                <td><button class="submitBtn" data-button="9" scr="save.jpg"></button></td>
+            </tr>
+            <tr id="row-10" class="time-Container" data-hour="10">
+                <th scope="row">10AM</th>
+                <td><textarea class="task10" name="task" rows="2"></textarea></td>
+                <td><button class="submitBtn" data-button="10" scr="save.jpg"></button></td>
+            </tr>
+            <tr id="row-11"class="time-Container" data-hour="11">
+                <th scope="row">11AM</th>
+                <td><textarea class="task11" name="task" rows="2"></textarea></td>
+                <td><button class="submitBtn" data-button="11" scr="save.jpg"></button></td>
+            </tr>
+            <tr id="row-12"class="time-Container" data-hour="12">
+                <th scope="row">12PM</th>
+                <td><textarea class="task12" name="task" rows="2"></textarea></td>
+                <td><button class="submitBtn" data-button="12" scr="save.jpg"></button></td>
+            </tr>
+            <tr id="row-13"class="time-Container" data-hour="13">
+                <th scope="row">1PM</th>
+                <td><textarea class="task13" name="task" rows="2"></textarea></td>
+                <td><button class="submitBtn" data-button="13" scr="save.jpg"></button></td>
+            </tr>
+            <tr id="row-14"class="time-Container" data-hour="14">
+                <th scope="row">2PM</th>
+                <td><textarea class="task14" name="task" rows="2"></textarea></td>
+                <td><button class="submitBtn" data-button="14" scr="save.jpg"></button></td>
+            </tr>
+            <tr id="row-15"class="time-Container" data-hour="15">
+                <th scope="row">3PM</th>
+                <td><textarea class="task15" name="task" rows="2"></textarea></td>
+                <td><button class="submitBtn" data-button="15" scr="save.jpg"></button></td>
+            </tr>
+            <tr id="row-16"class="time-Container" data-hour="16">
+                <th scope="row">4PM</th>
+                <td><textarea class="task16" name="task" rows="2"></textarea></td>
+                <td><button class="submitBtn" data-button="16" scr="save.jpg"></button></td>
+            </tr>
+            <tr id="row-17"class="time-Container" data-hour="17">
+                <th scope="row">5PM</th>
+                <td><textarea class="task17" name="task" rows="2"></textarea></td>
+                <td><button class="submitBtn" data-button="17" scr="save.jpg"></button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div> </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="assets/moment.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
