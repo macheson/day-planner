@@ -13,21 +13,23 @@ $("#date").text(todayDate);
 //changes color of hourly tasks depending on current time
 const arrHours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 for (let i = 0; i < arrHours.length; i++) {
-    let divVal = $("#row-"+arrHours[i]).attr("data-hour");
+    let divVal = $("#task-"+arrHours[i]).attr("data-hour");
+    //TODO: make work
     if (currentHour > parseInt(divVal)) {
-        $("#row-"+arrHours[i]).css("background-color", "gray");
+        $("#task-"+arrHours[i]).css("background-color", "lightgray");
         $(".task"+arrHours[i]).attr('readonly', true);
+        $("#row-"+ arrHours[i] + " button").addClass('click-disabled');
     }
     else if (currentHour == parseInt(divVal)) {
-        $("#row-"+arrHours[i]).css("background-color", "red");
+        $("#task-"+arrHours[i]).css("background-color", "red");
     }
     else if (currentHour < parseInt(divVal)) {
-        $("#row-"+arrHours[i]).css("background-color", "green");
+        $("#task-"+arrHours[i]).css("background-color", "green");
     }
 }
 
 //saves task entered for the appropriate hour entered
-$(".submitBtn").on("click", function (){
+$(".submitBtn:not('.click-disabled')").on("click", function (){
     let hourVal = $(this).attr("data-button");
     const taskVal = $(".task"+hourVal).val();
     if (taskVal.length > 0){
