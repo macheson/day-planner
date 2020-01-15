@@ -3,10 +3,6 @@ const todayDateShort = moment().format('L');
 const currentHour = moment().format('H');
 let tasks = {};
 
-//create each hourly task
-
-
-
 //displays current date in header
 $("#date").text(todayDate);
 
@@ -31,11 +27,16 @@ for (let i = 0; i < arrHours.length; i++) {
         $(".btn-"+ arrHours[i]).addClass('click-enabled');
     }
 }
+//calls function to check local storage if any task stored for today
+getStoredDate();
+
+//calls function to get any existing tasks from today from local storage
+getExistingTasks();
 
 //saves task entered for the appropriate hour entered
 $(".submitBtn:not('.click-disabled')").on("click", function (){
     let hourVal = $(this).attr("data-button");
-    const taskVal = $(".task"+hourVal).val();
+    const taskVal = ($(".task"+hourVal).val()).trim();
     if (taskVal.length > 0){
         addTask(hourVal, taskVal);
     }
@@ -44,13 +45,15 @@ $(".submitBtn:not('.click-disabled')").on("click", function (){
     }
 });
 
+//checks if stored data for that day when page loads and clears local storage if from prior day
 function getStoredDate () {
     let date = JSON.parse(localStorage.getItem("tasksDate"));
     if (date !== todayDateShort) {
         localStorage.clear();
     }
 }
-   
+
+//gets existing tasks for that data from local storage and calls function to populate it
 function getExistingTasks () {
     tasks = JSON.parse(localStorage.getItem("hourlyTasks"));
     //if null - create new array and add value
@@ -63,6 +66,7 @@ function getExistingTasks () {
     }
 }
 
+//populates hourly tasks that were saved in local storage
 function populateExistingTask () {
     if (tasks !== null) {
         for (let i = 0; i < arrHours.length; i++) {
@@ -71,11 +75,10 @@ function populateExistingTask () {
     }
 }
 
+//adds hourly task and stores in local storage
 function addTask (hourVal, taskVal){
     tasks[hourVal] = taskVal;
     localStorage.setItem('hourlyTasks', JSON.stringify(tasks));
     alert("Your task has been saved!");
 }
 
-getStoredDate();
-getExistingTasks();
