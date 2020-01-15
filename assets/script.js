@@ -22,9 +22,13 @@ for (let i = 0; i < arrHours.length; i++) {
     }
     else if (currentHour == parseInt(divVal)) {
         $("#task-"+arrHours[i]).css("background-color", "red");
+        $(".task"+arrHours[i]).addClass('focus');
+        $(".btn-"+ arrHours[i]).addClass('click-enabled');
     }
     else if (currentHour < parseInt(divVal)) {
         $("#task-"+arrHours[i]).css("background-color", "green");
+        $(".task"+arrHours[i]).addClass('focus');
+        $(".btn-"+ arrHours[i]).addClass('click-enabled');
     }
 }
 
@@ -70,6 +74,7 @@ function populateExistingTask () {
 function addTask (hourVal, taskVal){
     tasks[hourVal] = taskVal;
     localStorage.setItem('hourlyTasks', JSON.stringify(tasks));
+    alert("Your task has been saved!");
 }
 
 getStoredDate();
