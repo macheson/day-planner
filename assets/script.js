@@ -10,7 +10,6 @@ $("#date").text(todayDate);
 const arrHours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 for (let i = 0; i < arrHours.length; i++) {
     let divVal = $("#task-"+arrHours[i]).attr("data-hour");
-    //TODO: make work
     if (currentHour > parseInt(divVal)) {
         $("#task-"+arrHours[i]).css("background-color", "lightgray");
         $(".task"+arrHours[i]).attr('readonly', true);
