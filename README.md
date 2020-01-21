@@ -7,5 +7,5 @@ The app displays standard business hours (9 a.m. to 5 p.m.) for the current day.
 # Enhancement
 * allow users to change days and save tasks for that day
 * change alerts when task is saved or for error message to customized module
-* save button removed or replaced with different image/style for past tasks
+* save button removed, replaced with different image or grayout for past tasks
 
